@@ -1,0 +1,10 @@
+dataset: https://www.kaggle.com/datasets/jessicali9530/stanford-dogs-dataset?resource=download
+
+colab: help:
+https://stackoverflow.com/questions/63548677/the-size-of-the-train-data-1-couldnt-be-smaller-than-batch-size-32
+https://github.com/tensorflow/tensorflow/issues/45019
+https://stackoverflow.com/questions/2900035/changing-file-extension-in-python
+https://stackoverflow.com/questions/52265978/how-to-delete-a-locally-uploaded-file-on-google-colab
+https://stackoverflow.com/questions/51170131/how-to-convert-a-cell-type-in-google-colab-notebook-using-keyboard-shortcuts
+https://www.tensorflow.org/tutorials/images/classification
+https://pypi.org/project/tflite-model-maker/
