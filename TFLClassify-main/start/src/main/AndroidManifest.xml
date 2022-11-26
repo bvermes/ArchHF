@@ -20,17 +20,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TFLClassify"
         tools:ignore="AllowBackup">
-        <activity android:name="business.EvaluationActivity"
-            android:parentActivityName="business.MainActivity">
+        <activity
+            android:name=".BreedCheckActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
-        <activity android:name="business.SplashActivity">
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".EvaluationActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="business.MainActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
