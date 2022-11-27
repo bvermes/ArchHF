@@ -73,9 +73,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var imageAnalyzer: ImageAnalysis // Analysis use case, for running ML code
     private lateinit var camera: Camera
     private val cameraExecutor = Executors.newSingleThreadExecutor()
-    private lateinit var best: String
-    private lateinit var second: String
-    private lateinit var third: String
+    private lateinit var bestName: String
+    private lateinit var secondName: String
+    private lateinit var thirdName: String
+
+    private var bestValue: Float = 0.0f
+    private var secondValue: Float = 0.0f
+    private var thirdValue: Float = 0.0f
 
 
     // Views attachment
@@ -140,8 +144,14 @@ class MainActivity : AppCompatActivity() {
         }
         Evaluate.setOnClickListener {
 
-            val evaluateIntent = Intent(this, EvaluationActivity::class.java)
-            evaluateIntent.putExtra(EXTRA_TEXT, best)
+            val map: HashMap<String, Float> = HashMap()
+            map[bestName] = bestValue
+            map[secondName] = secondValue
+            map[thirdName] = thirdValue
+
+
+            val evaluateIntent = Intent(this, ChartActivity::class.java)
+            evaluateIntent.putExtra("map", map)
             startActivity(evaluateIntent)
         }
 
@@ -295,9 +305,13 @@ class MainActivity : AppCompatActivity() {
             for(output in outputs){
                 items.add(Recognition(output.label, output.score))
             }
-            best = outputs.get(0).label.toString()
-            second = outputs.get(1).label.toString()
-            third = outputs.get(2).label.toString()
+            bestName = outputs[0].label.toString()
+            secondName = outputs[1].label.toString()
+            thirdName = outputs[2].label.toString()
+
+            bestValue = outputs[0].score.toFloat()
+            secondValue = outputs[1].score.toFloat()
+            thirdValue = outputs[2].score.toFloat()
            // // START - Placeholder code at the start of the codelab. Comment this block of code out.
            // for (i in 0 until MAX_RESULT_DISPLAY){
            //     items.add(Recognition("Fake label $i", Random.nextFloat()))
