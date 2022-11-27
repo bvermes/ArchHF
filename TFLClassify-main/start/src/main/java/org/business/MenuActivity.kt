@@ -19,7 +19,7 @@ class MenuActivity : AppCompatActivity() {
         }
 
         binding.btnbreed.setOnClickListener {
-            val breedIntent = Intent(this, ChartActivity::class.java)
+            val breedIntent = Intent(this, BreedList::class.java)
             startActivity(breedIntent)
         }
     }

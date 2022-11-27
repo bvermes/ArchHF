@@ -21,6 +21,20 @@
         android:theme="@style/Theme.TFLClassify"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".DogBreedElement"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".BreedList"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ChartActivity"
             android:exported="false">
             <meta-data
