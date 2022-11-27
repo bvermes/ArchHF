@@ -1,9 +1,9 @@
-package business
+package org.business
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import business.databinding.ActivityMenuBinding
+import org.business.databinding.ActivityMenuBinding
 
 class MenuActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMenuBinding

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package business
+package org.business
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -40,11 +40,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
-import business.ui.RecognitionAdapter
-import business.util.YuvToRgbConverter
-import business.viewmodel.Recognition
-import business.viewmodel.RecognitionListViewModel
-
+import org.business.ml.DogModel
+import org.business.ui.RecognitionAdapter
+import org.business.util.YuvToRgbConverter
+import org.business.viewmodel.Recognition
+import org.business.viewmodel.RecognitionListViewModel
 import org.tensorflow.lite.support.image.TensorImage
 import java.io.File
 import java.io.FileNotFoundException
@@ -58,7 +58,7 @@ private var MAX_RESULT_DISPLAY = 3 // Maximum number of results displayed
 private const val TAG = "TFL Classify" // Name for logging
 private const val REQUEST_CODE_PERMISSIONS = 999 // Return code after asking for permission
 private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA) // permission needed
-public val EXTRA_TEXT: String = "org.tensorflow.lite.examples.classification.viewmodel.EXTRA_TEXT"
+val EXTRA_TEXT: String = "org.tensorflow.lite.examples.classification.viewmodel.EXTRA_TEXT"
 
 // Listener for the result of the ImageAnalyzer
 typealias RecognitionListener = (recognition: List<Recognition>) -> Unit
@@ -74,6 +74,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var camera: Camera
     private val cameraExecutor = Executors.newSingleThreadExecutor()
     private lateinit var best: String
+    private lateinit var second: String
+    private lateinit var third: String
+
 
     // Views attachment
     private val resultRecyclerView by lazy {
@@ -293,6 +296,8 @@ class MainActivity : AppCompatActivity() {
                 items.add(Recognition(output.label, output.score))
             }
             best = outputs.get(0).label.toString()
+            second = outputs.get(1).label.toString()
+            third = outputs.get(2).label.toString()
            // // START - Placeholder code at the start of the codelab. Comment this block of code out.
            // for (i in 0 until MAX_RESULT_DISPLAY){
            //     items.add(Recognition("Fake label $i", Random.nextFloat()))

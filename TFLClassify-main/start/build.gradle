@@ -26,13 +26,12 @@ android {
     compileSdkVersion 29
 
     defaultConfig {
-        applicationId "business"
+        applicationId "org.org.business"
         minSdkVersion 21
         //noinspection OldTargetApi
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -83,8 +82,8 @@ dependencies {
     implementation "androidx.activity:activity-ktx:1.1.0"
 
     // TODO 5: Optional GPU Delegates
-    implementation "org.tensorflow:tensorflow-lite-gpu:2.3.0"
-    implementation ('org.tensorflow:tensorflow-lite:0.0.0-nightly') { changing = false }
+    //implementation "org.tensorflow:tensorflow-lite-gpu:2.3.0"
+    //implementation ('org.tensorflow:tensorflow-lite:0.0.0-nightly') { changing = false }
 
 
     testImplementation 'junit:junit:4.13'

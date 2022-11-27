@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package business.ui
+package org.business.ui
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -22,8 +22,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import org.tensorflow.lite.examples.classification.databinding.RecognitionItemBinding
-import business.viewmodel.Recognition
+import org.business.databinding.RecognitionItemBinding
+import org.business.viewmodel.Recognition
 
 class RecognitionAdapter(private val ctx: Context) :
     ListAdapter<Recognition, RecognitionViewHolder>(RecognitionDiffUtil()) {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="business">
+    package ='org.business'>
     <!--
     Make sure the device has a camera. If you use android.hardware.camera without .any,
     it will not work if you have a device without a back camera, such as most Chromebooks.
@@ -19,7 +19,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TFLClassify"
-        tools:ignore="AllowBackup">
+        tools:ignore="AllowBackup"
+        >
+
         <activity
             android:name=".MenuActivity"
             android:exported="false">
@@ -29,7 +31,7 @@
         </activity>
         <activity
             android:name=".EvaluationActivity"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

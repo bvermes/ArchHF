@@ -1,11 +1,10 @@
-package business
+package org.business
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import org.tensorflow.lite.examples.classification.R
+import androidx.appcompat.app.AppCompatActivity
 
 class EvaluationActivity : AppCompatActivity() {
     private val BestGuessText by lazy{
@@ -18,9 +17,9 @@ class EvaluationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_evaluation)
 
-        var intent: Intent = getIntent()
-        var best: String = intent.getStringExtra(business.EXTRA_TEXT)
-        BestGuessText.setText(best)
+        var intent: Intent = intent
+        var best: String = intent.getStringExtra(org.business.EXTRA_TEXT)
+        BestGuessText.text = best
         when(best){
             "BEAR"-> BestGuessImageView.setImageResource(R.drawable.bear)
             "BUTTERFLY"-> BestGuessImageView.setImageResource(R.drawable.butterfly)

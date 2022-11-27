@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package business.viewmodel
+package org.business.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

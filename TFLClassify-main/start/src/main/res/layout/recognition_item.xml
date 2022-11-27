@@ -21,7 +21,7 @@
 
         <variable
             name="recognitionItem"
-            type="business.viewmodel.Recognition" />
+            type="org.business.viewmodel.Recognition" />
     </data>
 
     <LinearLayout
