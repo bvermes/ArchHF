@@ -1,13 +1,11 @@
 package business
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import org.tensorflow.lite.examples.classification.databinding.ActivityMenuBinding
-
+import androidx.appcompat.app.AppCompatActivity
+import business.databinding.ActivityMenuBinding
 
 class MenuActivity : AppCompatActivity() {
-
     private lateinit var binding : ActivityMenuBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +19,7 @@ class MenuActivity : AppCompatActivity() {
         }
 
         binding.btnbreed.setOnClickListener {
-            val breedIntent = Intent(this, BreedCheckActivity::class.java)
+            val breedIntent = Intent(this, MainActivity::class.java)
             startActivity(breedIntent)
         }
     }

@@ -40,12 +40,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
-import org.tensorflow.lite.examples.classification.ml.DogModel
 import business.ui.RecognitionAdapter
 import business.util.YuvToRgbConverter
-import org.tensorflow.lite.examples.classification.R
 import business.viewmodel.Recognition
 import business.viewmodel.RecognitionListViewModel
+
 import org.tensorflow.lite.support.image.TensorImage
 import java.io.File
 import java.io.FileNotFoundException

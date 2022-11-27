@@ -57,9 +57,9 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="57.6dp"
+            android:layout_height="70dp"
             android:layout_gravity="top"
-            android:src="@drawable/animalhead" />
+            android:src="@drawable/dogshead" />
 
 
         <androidx.recyclerview.widget.RecyclerView

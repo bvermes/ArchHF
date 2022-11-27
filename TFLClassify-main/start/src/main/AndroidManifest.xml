@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="org.tensorflow.lite.examples.classification">
+    package="business">
     <!--
     Make sure the device has a camera. If you use android.hardware.camera without .any,
     it will not work if you have a device without a back camera, such as most Chromebooks.
@@ -21,13 +21,6 @@
         android:theme="@style/Theme.TFLClassify"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".BreedCheckActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".MenuActivity"
             android:exported="false">
             <meta-data
@@ -36,7 +29,7 @@
         </activity>
         <activity
             android:name=".EvaluationActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
