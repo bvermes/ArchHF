@@ -2,16 +2,27 @@ package org.business
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import org.data.database.DogBreedListDatabase
+import org.data.entities.DogBreedElement
+import kotlin.concurrent.thread
 
 class EvaluationActivity : AppCompatActivity() {
+
+    private lateinit var database: DogBreedListDatabase
+    private lateinit var best: String
+    //private lateinit var bestBreedElement: DogBreedElement
     private val BestGuessText by lazy{
         findViewById<TextView>(R.id.bestguessText)
     }
     private val BestGuessImageView by lazy{
         findViewById<ImageView>(R.id.bestGuessImageView)
+    }
+    private val DescriptionText by lazy{
+        findViewById<TextView>(R.id.descriptionText)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,10 +30,21 @@ class EvaluationActivity : AppCompatActivity() {
 
         var intent: Intent = intent
         //var best: String? = intent.getStringExtra(org.business.EXTRA_TEXT.toString())
-        var best: String? = intent.getStringExtra("key")
+        best = intent.getStringExtra("key")
         BestGuessText.text = best
+        best = best.toLowerCase()
+        database = DogBreedListDatabase.getDatabase(applicationContext)
 
-        when(best){
+        thread {
+            if (best != null) {
+                val items = database.dogBreedElementDao().getAll()
+                val corritems = items.toMutableList()
+                setBest(corritems)
+
+            }
+        }
+
+        when(best.toUpperCase()){
             "GOLDEN_RETRIEVER"-> BestGuessImageView.setImageResource(R.drawable.golden_retriever)
             "DACHSHUND"-> BestGuessImageView.setImageResource(R.drawable.dachshund)
             "LABRADOR_RETRIEVER"-> BestGuessImageView.setImageResource(R.drawable.labrador_retriever)
@@ -55,5 +77,19 @@ class EvaluationActivity : AppCompatActivity() {
             "MINIATURE_SCHNAUZER"-> BestGuessImageView.setImageResource(R.drawable.miniature_schnauzer)
             "BLOODHOUND"-> BestGuessImageView.setImageResource(R.drawable.bloodhound)
         }
+
     }
+
+    private fun setBest(corritems: MutableList<DogBreedElement>) {
+        for (i in corritems){
+            Log.e("Balazs", i.name)
+            Log.e("Reka", best)
+            if (i.name == best){
+                DescriptionText.text = i.description
+            }
+        }
+
+    }
+
+
 }

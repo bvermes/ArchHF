@@ -8,6 +8,9 @@ interface DogBreedElementDao {
     @Query("SELECT * FROM dogbreedelement")
     fun getAll(): List<DogBreedElement>
 
+    @Query("SELECT * FROM dogbreedelement WHERE name = :name")
+    fun getBreed(name: String): DogBreedElement
+
     @Insert
     fun insert(dogBreedElement: DogBreedElement): Long
 
