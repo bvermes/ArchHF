@@ -10,8 +10,8 @@
     <ImageView
         android:id="@+id/bestGuessImageView"
         android:layout_width="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_height="220dp"
+        android:layout_marginTop="40dp"
+        android:layout_height="240dp"
         tools:src="@drawable/french_bulldog" />
 
     <TextView
@@ -19,8 +19,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:text="Hello"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/hello"
         android:textColor="#A82810"
         android:textSize="22sp"
         android:textStyle="bold" />
@@ -35,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:textSize="18sp"
-            android:text="A82810lhdfolghbffuibyvjhlbyfvbrbhgbvfh"
+            android:text="@string/base_description"
             android:textColor="@color/black" />
 
     </ScrollView>

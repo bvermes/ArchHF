@@ -99,7 +99,7 @@ class ChartActivity : AppCompatActivity() {
             PieEntry(breedrestValue, "Other")
         )
         val dataSet = PieDataSet(entries, "Dog Breeds")
-        dataSet.setColors(Color.parseColor("#FFB2FF59"), Color.parseColor("#FFC39A70"), Color.parseColor("#E6FFEA00"), Color.parseColor("B340C4FF"))
+        dataSet.setColors(Color.parseColor("#FFB2FF59"), Color.parseColor("#FFC39A70"), Color.parseColor("#E6FFEA00"), Color.parseColor("#B340C4FF"))
 
         val data = PieData(dataSet)
         binding.chartBreeds.setUsePercentValues(true)
@@ -109,7 +109,7 @@ class ChartActivity : AppCompatActivity() {
         binding.chartBreeds.setEntryLabelColor(Color.parseColor("#FF515151"))
         binding.chartBreeds.setEntryLabelTextSize(10.0f)
         binding.chartBreeds.description.isEnabled = false
-        binding.chartBreeds.legend.isEnabled = false
+        binding.chartBreeds.getLegend().setEnabled(false)
         binding.chartBreeds.invalidate()
     }
 
@@ -119,7 +119,7 @@ class ChartActivity : AppCompatActivity() {
             Log.d("BreedList", "DogBreeds update was successful")
         }
     }
-    @DrawableRes
+    @DrawableRes()
     private fun getImageResource(name: String): Int {
         return when (name) {
             "golden_retriever" -> R.drawable.golden_retriever_o

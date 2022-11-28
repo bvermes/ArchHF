@@ -21,4 +21,6 @@
     <string name="screenshoot">Screenshoot</string>
     <string name="change">Change</string>
     <string name="evaluate">Evaluate</string>
+    <string name="hello">Hello</string>
+    <string name="base_description">Base description</string>
 </resources>

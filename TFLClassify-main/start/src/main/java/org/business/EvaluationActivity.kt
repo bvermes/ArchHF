@@ -29,8 +29,8 @@ class EvaluationActivity : AppCompatActivity() {
 
         val intent: Intent = intent
         //var best: String? = intent.getStringExtra(org.business.EXTRA_TEXT.toString())
-        best = intent.getStringExtra("key")
-        BestGuessText.text = best
+        best = intent.getStringExtra("key") as String
+        BestGuessText.text = best.toUpperCase()
         best = best.toLowerCase()
         database = DogBreedListDatabase.getDatabase(applicationContext)
 

@@ -23,10 +23,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Matrix
-import android.net.Uri
 import android.os.Bundle
-import android.os.Environment
-import android.text.format.DateFormat
 import android.util.Log
 import android.util.Size
 import android.widget.Button
@@ -46,10 +43,6 @@ import org.business.util.YuvToRgbConverter
 import org.business.viewmodel.Recognition
 import org.business.viewmodel.RecognitionListViewModel
 import org.tensorflow.lite.support.image.TensorImage
-import java.io.File
-import java.io.FileNotFoundException
-import java.io.FileOutputStream
-import java.io.IOException
 import java.util.*
 import java.util.concurrent.Executors
 
@@ -157,32 +150,32 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun screenshoot() {
-        val date = Date()
-        val now = DateFormat.format("yyyy-MM-dd_hh:mm:ss", date)
-        val filename =
-            Environment.getExternalStorageDirectory().toString() + "/ScreenShooter/" + now + ".jpg"
-        val root = window.decorView
-        root.isDrawingCacheEnabled = true
-        val bitmap = Bitmap.createBitmap(root.drawingCache)
-        root.isDrawingCacheEnabled = false
-        val file = File(filename)
-        file.parentFile.mkdirs()
-        try {
-            val fileOutputStream = FileOutputStream(file)
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream)
-            fileOutputStream.flush()
-            fileOutputStream.close()
-            val uri = Uri.fromFile(file)
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.setDataAndType(uri, "image/*")
-            startActivity(intent)
-        } catch (e: FileNotFoundException) {
-            e.printStackTrace()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-    }
+    //private fun screenshoot() {
+    //    val date = Date()
+    //    val now = DateFormat.format("yyyy-MM-dd_hh:mm:ss", date)
+    //    val filename =
+    //        Environment.getExternalStorageDirectory().toString() + "/ScreenShooter/" + now + ".jpg"
+    //    val root = window.decorView
+    //    root.isDrawingCacheEnabled = true
+    //    val bitmap = Bitmap.createBitmap(root.drawingCache)
+    //    root.isDrawingCacheEnabled = false
+    //    val file = File(filename)
+    //    file.parentFile.mkdirs()
+    //    try {
+    //        val fileOutputStream = FileOutputStream(file)
+    //        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream)
+    //        fileOutputStream.flush()
+    //        fileOutputStream.close()
+    //        val uri = Uri.fromFile(file)
+    //        val intent = Intent(Intent.ACTION_VIEW)
+    //        intent.setDataAndType(uri, "image/*")
+    //        startActivity(intent)
+    //    } catch (e: FileNotFoundException) {
+    //        e.printStackTrace()
+    //    } catch (e: IOException) {
+    //        e.printStackTrace()
+    //    }
+    //}
 
 
     /**
