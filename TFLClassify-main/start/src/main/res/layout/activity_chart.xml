@@ -4,19 +4,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
+    android:weightSum="6"
     tools:context=".ChartActivity">
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/chartBreeds"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
-    <Button
-        android:id="@+id/btnTakeHoliday"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Take Holiday"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:layout_weight="5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/btnDog1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FBAA60"
+            android:text="D1"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnDog2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FBAA60"
+            android:text="D2"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnDog3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FBAA60"
+            android:text="D3"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
 
 </LinearLayout>

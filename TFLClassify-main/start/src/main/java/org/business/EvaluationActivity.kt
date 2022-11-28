@@ -18,8 +18,10 @@ class EvaluationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_evaluation)
 
         var intent: Intent = intent
-        var best: String = intent.getStringExtra(org.business.EXTRA_TEXT)
+        //var best: String? = intent.getStringExtra(org.business.EXTRA_TEXT.toString())
+        var best: String? = intent.getStringExtra("key")
         BestGuessText.text = best
+
         when(best){
             "GOLDEN_RETRIEVER"-> BestGuessImageView.setImageResource(R.drawable.golden_retriever)
             "DACHSHUND"-> BestGuessImageView.setImageResource(R.drawable.dachshund)

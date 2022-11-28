@@ -21,32 +21,21 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FCF1DA"
         tools:context="org.business.MainActivity">
 
-        <Button
-            android:id="@+id/screenshootButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/screenshoot"
-            android:translationX="0dp"
-            android:translationY="480dp"
-            />
-
-        <Button
-            android:id="@+id/changerowsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:translationX="150dp"
-            android:translationY="480dp"
-            android:text="@string/change" />
 
         <Button
             android:id="@+id/evaluate"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="49dp"
+            android:backgroundTint="#FBC490"
             android:text="@string/evaluate"
-            android:translationX="252dp"
-            android:translationY="480dp" />
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:translationX="100dp"
+            android:translationY="300dp" />
 
 
         <androidx.camera.view.PreviewView

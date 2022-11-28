@@ -1,13 +1,14 @@
 package org.business
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
-import com.github.mikephil.charting.utils.ColorTemplate
 import org.business.databinding.ActivityChartBinding
 
 class ChartActivity : AppCompatActivity() {
@@ -42,18 +43,40 @@ class ChartActivity : AppCompatActivity() {
         //var best: String = intent.getStringExtra(org.business.EXTRA_TEXT)
 
         loadBreeds()
+
+        binding.btnDog1.setText(breed1Name)
+        binding.btnDog2.setText(breed2Name)
+        binding.btnDog3.setText(breed3Name)
+
+        binding.btnDog1.setOnClickListener{
+            val dog1Intent = Intent(this, EvaluationActivity::class.java)
+            dog1Intent.putExtra("key", breed1Name.toString())
+            startActivity(dog1Intent)
+        }
+        binding.btnDog2.setOnClickListener{
+            val dog2Intent = Intent(this, EvaluationActivity::class.java)
+            dog2Intent.putExtra("key", breed2Name.toString())
+            startActivity(dog2Intent)
+        }
+        binding.btnDog3.setOnClickListener{
+            val dog3Intent = Intent(this, EvaluationActivity::class.java)
+            dog3Intent.putExtra("key", breed3Name.toString())
+            startActivity(dog3Intent)
+        }
+
     }
     private fun loadBreeds(){
         val entries = listOf(
             PieEntry(breed1Value, breed1Name),
             PieEntry(breed2Value, breed2Name),
             PieEntry(breed3Value, breed3Name),
-            PieEntry(breedrestValue, "Rest")
+            PieEntry(breedrestValue, "Other")
         )
         val dataSet = PieDataSet(entries, "Dog Breeds")
-        dataSet.colors = ColorTemplate.MATERIAL_COLORS.toList()
+        dataSet.setColors(Color.parseColor("#FBC490"), Color.parseColor("#F67B50"), Color.parseColor("#A82810"), Color.parseColor("#FBAA60"))
 
         val data = PieData(dataSet)
+        binding.chartBreeds.setUsePercentValues(true)
         binding.chartBreeds.data = data
         binding.chartBreeds.invalidate()
     }

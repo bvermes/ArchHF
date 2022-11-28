@@ -1,27 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.business.EvaluationActivity"
-    android:background="@color/black">
+    android:background="#4DFBC490"
+    android:orientation="vertical"
+    tools:context=".EvaluationActivity">
+
+    <ImageView
+        android:id="@+id/bestGuessImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="220dp"
+        tools:src="@drawable/french_bulldog" />
 
     <TextView
         android:id="@+id/bestguessText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
         android:text="Hello"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="189dp"
-        tools:layout_editor_absoluteY="321dp" />
+        android:textColor="#A82810"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/bestGuessImageView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="65dp" />
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/desctriptionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="A82810lhdfolghbffuibyvjhlbyfvbrbhgbvfh"
+            android:textColor="@color/black" />
+
+    </ScrollView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

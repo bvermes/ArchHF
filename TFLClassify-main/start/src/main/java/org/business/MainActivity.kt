@@ -89,12 +89,12 @@ class MainActivity : AppCompatActivity() {
     private val viewFinder by lazy {
         findViewById<PreviewView>(R.id.viewFinder) // Display the preview image from Camera
     }
-    private val ChangeRowsButton by lazy{
-        findViewById<Button>(R.id.changerowsButton)
-    }
-    private val TakeScreenshot by lazy{
-        findViewById<Button>(R.id.screenshootButton)
-    }
+  //  private val ChangeRowsButton by lazy{
+  //      findViewById<Button>(R.id.changerowsButton)
+  //  }
+  //  private val TakeScreenshot by lazy{
+  //      findViewById<Button>(R.id.screenshootButton)
+  //  }
     private val Evaluate by lazy{
         findViewById<Button>(R.id.evaluate)
     }
@@ -131,17 +131,17 @@ class MainActivity : AppCompatActivity() {
                 viewAdapter.submitList(it)
             }
         )
-        TakeScreenshot.setOnClickListener {
-            screenshoot()
-        }
-        ChangeRowsButton.setOnClickListener {
-            //screenshoot()
-            when(MAX_RESULT_DISPLAY){
-                1-> MAX_RESULT_DISPLAY = 2
-                2-> MAX_RESULT_DISPLAY = 3
-                3-> MAX_RESULT_DISPLAY = 1
-            }
-        }
+     //  TakeScreenshot.setOnClickListener {
+     //      screenshoot()
+     //  }
+     //  ChangeRowsButton.setOnClickListener {
+     //      //screenshoot()
+     //      when(MAX_RESULT_DISPLAY){
+     //          1-> MAX_RESULT_DISPLAY = 2
+     //          2-> MAX_RESULT_DISPLAY = 3
+     //          3-> MAX_RESULT_DISPLAY = 1
+     //      }
+     //  }
         Evaluate.setOnClickListener {
 
             val map: HashMap<String, Float> = HashMap()
