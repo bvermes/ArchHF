@@ -5,14 +5,18 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import org.business.databinding.ActivityChartBinding
+import org.data.database.DogBreedListDatabase
+import org.data.entities.DogBreedElement
+import kotlin.concurrent.thread
 
 class ChartActivity : AppCompatActivity() {
     private lateinit var binding : ActivityChartBinding
+    private lateinit var database: DogBreedListDatabase
+
     private var breed1Value : Float = 0.0f
     private var breed2Value : Float = 0.0f
     private var breed3Value : Float = 0.0f
@@ -28,6 +32,9 @@ class ChartActivity : AppCompatActivity() {
         binding = ActivityChartBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        database = DogBreedListDatabase.getDatabase(applicationContext)
+
+
         var intent: Intent = intent
         val hashMap = intent.getSerializableExtra("map") as HashMap<String, Float>
 
@@ -38,6 +45,23 @@ class ChartActivity : AppCompatActivity() {
         breed3Name = hashMap.keys.elementAt(2) // Get key by index.
         breed3Value = hashMap.getValue(breed3Name) // Get value.
         breedrestValue = 1 - breed1Value - breed2Value - breed3Value
+
+        Log.e("Balazs", breed1Name)
+        Log.e("Balazs2", breed2Name)
+        Log.e("Balazs3", breed3Name)
+        breed1Name = breed1Name.toLowerCase()
+        thread {
+            if (breed1Name != null) {
+                val items = database.dogBreedElementDao().getAll()
+                val corritems = items.toMutableList()
+                for (i in corritems) {
+                    if (i.name == breed1Name) {
+                        i.detected = true
+                        onItemChanged(i)
+                    }
+                }
+            }
+        }
 
         Log.v("HashMapTest", hashMap["key"].toString())
         //var best: String = intent.getStringExtra(org.business.EXTRA_TEXT)
@@ -61,6 +85,7 @@ class ChartActivity : AppCompatActivity() {
         }
 
     }
+
     private fun loadBreeds(){
         val entries = listOf(
             PieEntry(breed1Value, breed1Name),
@@ -83,4 +108,10 @@ class ChartActivity : AppCompatActivity() {
         binding.chartBreeds.invalidate()
     }
 
+    fun onItemChanged(item: DogBreedElement) {
+        thread {
+            database.dogBreedElementDao().update(item)
+            Log.d("BreedList", "DogBreeds update was successful")
+        }
+    }
 }
