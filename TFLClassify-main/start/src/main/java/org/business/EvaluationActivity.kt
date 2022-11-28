@@ -2,7 +2,6 @@ package org.business
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -82,8 +81,6 @@ class EvaluationActivity : AppCompatActivity() {
 
     private fun setBest(corritems: MutableList<DogBreedElement>) {
         for (i in corritems){
-            Log.e("Balazs", i.name)
-            Log.e("Reka", best)
             if (i.name == best){
                 DescriptionText.text = i.description
             }

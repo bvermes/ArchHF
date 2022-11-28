@@ -24,20 +24,6 @@
         android:background="#FCF1DA"
         tools:context="org.business.MainActivity">
 
-
-        <Button
-            android:id="@+id/evaluate"
-            android:layout_width="wrap_content"
-            android:layout_height="49dp"
-            android:backgroundTint="#C39A70"
-            android:text="@string/evaluate"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:translationX="100dp"
-            android:translationY="500dp" />
-
-
         <androidx.camera.view.PreviewView
             android:id="@+id/viewFinder"
             android:layout_width="match_parent"
@@ -50,6 +36,17 @@
             android:layout_gravity="top"
             android:src="@drawable/dogshead" />
 
+        <Button
+            android:id="@+id/evaluate"
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
+            android:backgroundTint="#C39A70"
+            android:text="@string/evaluate"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:translationY="600dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recognitionResults"
