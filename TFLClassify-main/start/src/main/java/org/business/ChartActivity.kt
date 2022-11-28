@@ -94,7 +94,7 @@ class ChartActivity : AppCompatActivity() {
             PieEntry(breedrestValue, "Other")
         )
         val dataSet = PieDataSet(entries, "Dog Breeds")
-        dataSet.setColors(Color.parseColor("#B340C4FF"), Color.parseColor("#FFC39A70"), Color.parseColor("#E6FFEA00"), Color.parseColor("#FFB2FF59"))
+        dataSet.setColors(Color.parseColor("#FFB2FF59"), Color.parseColor("#FFC39A70"), Color.parseColor("#E6FFEA00"), Color.parseColor("B340C4FF"))
 
         val data = PieData(dataSet)
         binding.chartBreeds.setUsePercentValues(true)
