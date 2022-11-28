@@ -29,13 +29,13 @@
             android:id="@+id/evaluate"
             android:layout_width="wrap_content"
             android:layout_height="49dp"
-            android:backgroundTint="#FBC490"
+            android:backgroundTint="#C39A70"
             android:text="@string/evaluate"
-            android:textColor="@color/black"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold"
             android:translationX="100dp"
-            android:translationY="300dp" />
+            android:translationY="500dp" />
 
 
         <androidx.camera.view.PreviewView

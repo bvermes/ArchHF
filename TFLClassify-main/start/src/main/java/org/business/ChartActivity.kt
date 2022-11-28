@@ -44,10 +44,6 @@ class ChartActivity : AppCompatActivity() {
 
         loadBreeds()
 
-        binding.btnDog1.setText(breed1Name)
-        binding.btnDog2.setText(breed2Name)
-        binding.btnDog3.setText(breed3Name)
-
         binding.btnDog1.setOnClickListener{
             val dog1Intent = Intent(this, EvaluationActivity::class.java)
             dog1Intent.putExtra("key", breed1Name.toString())
@@ -73,11 +69,17 @@ class ChartActivity : AppCompatActivity() {
             PieEntry(breedrestValue, "Other")
         )
         val dataSet = PieDataSet(entries, "Dog Breeds")
-        dataSet.setColors(Color.parseColor("#FBC490"), Color.parseColor("#F67B50"), Color.parseColor("#A82810"), Color.parseColor("#FBAA60"))
+        dataSet.setColors(Color.parseColor("#B340C4FF"), Color.parseColor("#FFC39A70"), Color.parseColor("#E6FFEA00"), Color.parseColor("#FFB2FF59"))
 
         val data = PieData(dataSet)
         binding.chartBreeds.setUsePercentValues(true)
         binding.chartBreeds.data = data
+        binding.chartBreeds.data.setValueTextSize(12.0f)
+        binding.chartBreeds.data.setValueTextColor(Color.parseColor("#FF515151"))
+        binding.chartBreeds.setEntryLabelColor(Color.parseColor("#FF515151"))
+        binding.chartBreeds.setEntryLabelTextSize(10.0f)
+        binding.chartBreeds.description.isEnabled = false
+        binding.chartBreeds.getLegend().setEnabled(false)
         binding.chartBreeds.invalidate()
     }
 

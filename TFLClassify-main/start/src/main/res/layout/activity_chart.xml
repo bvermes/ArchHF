@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="#26FBC490"
     android:weightSum="6"
     tools:context=".ChartActivity">
 
@@ -12,6 +12,7 @@
         android:id="@+id/chartBreeds"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:layout_gravity="center"
         android:layout_weight="5" />
 
@@ -22,38 +23,35 @@
         android:orientation="horizontal"
         android:weightSum="3">
 
-        <Button
+        <ImageButton
             android:id="@+id/btnDog1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
+            android:scaleType="centerCrop"
             android:layout_weight="1"
-            android:backgroundTint="#FBAA60"
-            android:text="D1"
-            android:textColor="@color/white" />
+            android:src="@drawable/french_bulldog_o" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnDog2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:backgroundTint="#FBAA60"
-            android:text="D2"
-            android:textColor="@color/white" />
+            android:src="@drawable/french_bulldog_o"
+            android:scaleType="centerCrop"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/btnDog3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:backgroundTint="#FBAA60"
-            android:text="D3"
-            android:textColor="@color/white" />
+            android:src="@drawable/french_bulldog_o"
+            android:scaleType="centerCrop"/>
 
     </LinearLayout>
 

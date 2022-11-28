@@ -10,6 +10,7 @@
     <ImageView
         android:id="@+id/bestGuessImageView"
         android:layout_width="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_height="220dp"
         tools:src="@drawable/french_bulldog" />
 
@@ -18,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="8dp"
+        android:layout_margin="5dp"
         android:text="Hello"
         android:textColor="#A82810"
         android:textSize="20sp"
@@ -32,7 +33,8 @@
             android:id="@+id/desctriptionText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="10dp"
+            android:textSize="14sp"
             android:text="A82810lhdfolghbffuibyvjhlbyfvbrbhgbvfh"
             android:textColor="@color/black" />
 

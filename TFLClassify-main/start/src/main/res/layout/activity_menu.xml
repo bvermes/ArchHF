@@ -13,20 +13,22 @@
 
         <ImageButton
             android:id="@+id/btndetector"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_gravity="center"
-            android:backgroundTint="#A8000000"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#6C360A"
             android:scaleType="fitXY"
             android:src="@drawable/dogicon" />
 
 
         <ImageButton
             android:id="@+id/btnbreed"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_gravity="center"
-            android:backgroundTint="#A8000000"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#6C360A"
             android:scaleType="fitXY"
             android:src="@drawable/dogbreedsicon" />
 
