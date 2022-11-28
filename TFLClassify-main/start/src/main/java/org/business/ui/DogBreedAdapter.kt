@@ -22,7 +22,11 @@ class DogBreedAdapter(private val listener: DogBreedElementClickListener) :
 
         holder.binding.ivIcon.setImageResource(getImageResource(dogbreedElement.name))
         holder.binding.tvName.text = dogbreedElement.name.toString()
-        holder.binding.tvDetected.text = dogbreedElement.detected.toString()
+        if(dogbreedElement.detected){
+            holder.binding.ivDetected.setImageResource(R.drawable.detected)
+        } else{
+            holder.binding.ivDetected.setImageResource(R.drawable.notdetected)
+        }
     }
     @DrawableRes()
     private fun getImageResource(name: String): Int {
