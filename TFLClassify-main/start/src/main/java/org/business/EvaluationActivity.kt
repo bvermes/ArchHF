@@ -27,7 +27,7 @@ class EvaluationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_evaluation)
 
-        var intent: Intent = intent
+        val intent: Intent = intent
         //var best: String? = intent.getStringExtra(org.business.EXTRA_TEXT.toString())
         best = intent.getStringExtra("key")
         BestGuessText.text = best
