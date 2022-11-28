@@ -17,9 +17,7 @@ abstract class DogBreedListDatabase : RoomDatabase() {
                 applicationContext,
                 DogBreedListDatabase::class.java,
                 "dogbreed-list"
-            )
-                .createFromAsset("database/breeds.db")
-                .build();
+            ).build();
         }
     }
 }

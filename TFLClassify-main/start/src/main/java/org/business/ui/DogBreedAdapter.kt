@@ -21,7 +21,8 @@ class DogBreedAdapter(private val listener: DogBreedElementClickListener) :
         val dogbreedElement = items[position]
 
         holder.binding.ivIcon.setImageResource(getImageResource(dogbreedElement.name))
-        holder.binding.tvName.text = dogbreedElement.detected.toString()
+        holder.binding.tvName.text = dogbreedElement.name.toString()
+        holder.binding.tvDetected.text = dogbreedElement.detected.toString()
     }
     @DrawableRes()
     private fun getImageResource(name: String): Int {

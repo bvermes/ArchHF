@@ -21,7 +21,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:textSize="18sp"
+        android:textSize="16sp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_weight="1"
+        tools:text="Apple" />
+
+    <TextView
+        android:id="@+id/tvDetected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="end"
+        android:textSize="16sp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         tools:text="Apple" />
 
 </LinearLayout>
